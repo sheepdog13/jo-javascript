@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        let answer = prompt("10+10=?")
+        while (answer != 20){
+            answer = prompt("다시 정답을 입력해주세요")
+        }
+        document.write("정답입니다")
+
+        let num = prompt("0을 입력하면 모든수를 더합니다")
+        let sum = 0;
+            while (num != "0"){
+                if(!isNaN(num)){
+                    sum += Number(num);
+                }
+                num = prompt("0을 입력하면 모든수를 더합니다")
+            }
+        document.write(`<p>총합:${sum}</p>`);
+
+        // do while문 실습
+        let pw = 'green';
+        let count = 0;
+        let user;
+        do {
+            user = prompt("비밀번호를 입력해주세요")
+            count++
+        }while (user != pw)
+        alert(count+"회 시도하였습니다")
+
+        // break 실습
+        let i = 1;
+        while (true) {
+            if(i > 10){
+                break;
+            }
+            document.write(i)
+            i++
+        }
+
+        // continue 실습
+        for (let i = 1; i <= 10; i++){
+            if(i%3 == 0){
+                continue
+            }
+            document.write(`<p>${i}</p>`);
+        }
+        
+    </script>
+</body>
+</html>

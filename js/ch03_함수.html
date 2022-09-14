@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 명시적 함수를 선언
+        function hi() {
+            document.write("hi");
+        }
+        // 명시적 함수 - 매개변수 있음
+        function introName(name) {
+            document.write(`안녕하세요 ${name}입니다 반갑습니다`)
+        }
+        // 명시적 함수 - 리턴값 있음
+        function introNameReturn(name) {
+            return `안녕하세요${name}입니다 반갑습니다`
+        }
+    </script>
+</head>
+<body>
+
+    <script>
+        // 함수 : function
+        // 함수를 선언하는 방법
+        function count(num) {
+            // 매개변수를 통해서 값을 가져올수있다
+            for (let i = 1; i <= num; i++){
+                document.write(i)
+            }
+            // return을 통해서 값을 내보내줄 수 있다
+            return num;
+        }
+        // 함수 호출 방법
+        count(10);
+        // 함수의 리턴값 콘솔에 출력하기
+        console.log(count(3));
+        let returnNum = count(5);
+        
+        // 함수 선언
+        function intro() {
+            document.write("<P>안녕하세요 반갑습니다</p>")
+        }
+        // 함수 실행 - 함수 호출
+        intro();
+        // head에 선언한 명시적 함수를 호출할때는 body-script
+        hi();
+        introName("홍길동");
+        
+        document.write("<br>"+introNameReturn("홍길동"));
+    </script>
+</body>
+</html>
