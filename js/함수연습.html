@@ -1,0 +1,54 @@
+'<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        function power(a,b = 2) {
+            let power = 1;
+            for (let i = 1; i <= b; i++){
+                power *= a;
+            }
+            document.write(power);
+        }
+        power(2,10);
+        
+        // multiply 나머지 연산자 - 함수표현식
+        let multiply = function(...nums) {
+            let multy = 1;
+            for (num of nums){
+                multy *= num;
+            }
+            document.write(`<p>${multy}</p>`)
+        }
+        multiply(1,2,3,4,5);
+
+        // 매개변수의 갯수마다 다른 값 return 하기
+        function meetAt(a, b = undefined , c = undefined) {
+            if (isNaN(b) && isNaN(c)){
+                return a+'년'; // 값이 1개 일때
+            } else if(isNaN(c)) {
+                return `${a}년 ${b}월`; // 값이 2개 일때
+            } else {
+                return `${a}/${b}/${c}`; // 값이 3개 일때
+            }
+        }
+        function meetAtArg (a,b,c){ // 2. arguments 이용하는 방법
+            let argCount = arguments.length;
+            switch(argCount){
+                case 1:
+                    return a+'년';
+                case 2:
+                    return `${a}년 ${b}월`;
+                case 3:
+                    return `${a}/${b}/${c}`;
+            }
+        }
+    </script>
+</body>
+</html>

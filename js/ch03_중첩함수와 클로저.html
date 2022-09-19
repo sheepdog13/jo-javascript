@@ -67,12 +67,16 @@
         // 넣은 값을 계속해서 곱하는 함수를 만드세요
         // multiClosures() / startMulti
         function multiClosures() {
-            let sum = 1;
-            return (num) => sum *= num;
+            let multi = 1;
+            return num => multi *= num;
         }
         let startMulti = multiClosures();
         document.write(`<p>${startMulti(3)}</p>`)
         document.write(`<p>${startMulti(5)}</p>`)
+
+            console.log(`${a}년`);
+            console.log(`${a}년 ${b}월`);
+            console.log(`${a}/${b}/${c}`);
     </script>
 </body>
 </html>
