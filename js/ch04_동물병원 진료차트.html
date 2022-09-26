@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    function AnimalChart(name,kind,age){
+        this.name = name;
+        this.kind = kind;
+        this.age = age;
+        this.sickness = "";
+        this.condition = "";
+
+        this.receive = function(sickness,condition) {
+            this.sickness = sickness;
+            this.condition = condition;
+        };
+        this.confirm = function() {
+            let s = ""
+            for(let x in this) {
+                // 함수부분은 제외하기 위함
+                if (typeof this[x] == "function") {
+                    continue;
+                    }
+                s += x+":"+this[x]+"\n";
+                }
+            return s;
+            }
+        };
+
+    let first = new AnimalChart("홍길동","강아지",1);
+    first.receive("감기","나쁨");
+    first.confirm();
+
+    let count = 0;
+    let charts = [];
+    charts[0] = "0";
+    charts[count] = new AnimalChart("성춘향","고양이",5);
+    count++;
+    </script>
+</body>
+</html>

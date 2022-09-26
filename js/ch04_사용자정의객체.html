@@ -137,6 +137,35 @@
         let myMessege = new Messege("홍길동", "반값습니다", "0224");
         let yourMessege = new Messege("성춘향", "안녕하세요", "0224");
 
+        delete myMessege.content;
+        delete myMessege.name;
+
+        for (let x in yourMessege) {
+            console.log(x+": "+ yourMessege[x]);
+        }
+
+        for (let x in myBusCard) {
+            console.log(x+": "+ myBusCard[x]);
+        }
+
+        let memo = {
+            title : "오늘 할일",
+            todo : {
+                morning : ["청소", "준비"],
+                afternoon : ["수업"],
+                evening : ["정리", "독서"]
+            }
+        };
+        
+        let myMovie = {
+            title : "킹메이커",
+            time : "120",
+            rate : 8.84,
+            coment : {
+                id : "movieMaster",
+                content : "Good"
+                }
+        };
     </script>
 </body>
 </html>
