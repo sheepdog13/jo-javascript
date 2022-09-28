@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 class="title">수정하기 전 제목입니다</h1>
+    <ul>
+        <li> 첫번째 내용입니다</li>
+        <li> 두번째 내용입니다</li>
+        <li> 세번째 내용입니다</li>
+        <li> 네번째 내용입니다</li>
+    </ul>
+    <ol>
+        <li>첫번째 내용입니다</li>
+        <li>두번째 내용입니다</li>
+        <li>세번째 내용입니다</li>
+        <li>네번째 내용입니다</li>
+    </ol>
+    <div class="main">
+        <p><span>빈 공간</span>입니다</p>
+    </div>
+    <div>푸터영역입니다</div>
+
+    <script>
+        let h1Tag = document.querySelector(".title")
+        h1Tag.innerHTML = "DOM을 이용한 수정"
+        h1Tag.style.color = "blue"
+        h1Tag.style.backgroundColor = "lightgray"
+
+        let ulTag = document.querySelector("ul")
+        // li 제거
+        ulTag.removeChild(ulTag.firstElementChild)
+        
+        let li = document.createElement("li")
+        ulTag.appendChild(li)
+
+        let text = document.createTextNode("새로 추가한 노드요소입니다")
+        // 노드 추가
+        ulTag.lastChild.appendChild(text)
+
+        let olTag = document.querySelector("ol")
+        olTag.firstElementChild.innerHTML = "내용을 바꾸었습니다"
+        // first와 last를 이용한 자식 찾기
+        olTag.firstElementChild.nextElementSibling.remove()
+        // children 배열을 통한 자식찾기
+        olTag.children[2].remove()
+
+        let spanTag = document.querySelector("p span")
+        spanTag.style.color = "red"
+
+        let main = document.querySelector(".main")
+        main.append(spanTag.parentElement.cloneNode(true))
+        main.append(spanTag.parentElement.cloneNode(true))
+    </script>
+</body>
+</html>
